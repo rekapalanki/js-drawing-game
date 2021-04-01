@@ -26,10 +26,18 @@ ctx.stroke();
 
 // Create draw function 
 
+const draw = ({key}) => { 
+  console.log(key);
+}
+
 // Create Arrow event handler
 
 const arrowHandler = (event) => {
-  console.log(event.key);
+  event.stopPropagation();
+  if (event.key.includes('Arrow')) {
+    event.preventDefault();
+    draw({key: event.key});
+  };
 }
 
 // Add event listener

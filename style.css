@@ -126,6 +126,14 @@ html {
     background-size: cover;
   }
 
+  footer {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    color: #fff;
+    font-size: 75%;
+  }
+
   canvas {
     border: 10px solid #e80000;
     border-radius: 10px;
