@@ -5,19 +5,35 @@ const ctx = canvas.getContext('2d');
 
 // Setup canvas 
 
+const {width, height} = canvas;
+let [x, y] = [
+  Math.floor(Math.random()*width),
+  Math.floor(Math.random()*height),
+]
+
 ctx.lineCap = 'round';
 ctx.lineJoin = 'round';
 ctx.lineWidth = 10;
 
+ctx.fillStyle = '#000';
+ctx.fillRect(0,0,width, height);
+
 ctx.beginPath();
-ctx.moveTo(200,200);
-ctx.lineTo(200,200);
+ctx.strokeStyle = '#fff'
+ctx.moveTo(x, y);
+ctx.lineTo(x, y);
 ctx.stroke();
 
 // Create draw function 
 
 // Create Arrow event handler
 
+const arrowHandler = (event) => {
+  console.log(event.key);
+}
+
 // Add event listener
+
+window.addEventListener('keydown', arrowHandler)
 
 // Create clear function and click event listener

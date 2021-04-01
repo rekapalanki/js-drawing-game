@@ -66,8 +66,8 @@ html {
   
   
   a.button, button, input[type="button"] {
-    color: white;
-    background: var(--green);
+    color: var(--black);
+    background: var(--yellow);
     padding: 1rem;
     border: 0;
     border: 2px solid transparent;
@@ -78,7 +78,7 @@ html {
   }
   
   :focus {
-    outline-color: var(--green);
+    outline-color: var(--yellow);
   }
   
   fieldset {
@@ -122,7 +122,7 @@ html {
     align-items: center;
     justify-items: center;
     background: white;
-    background: url(https://picsum.photos/1600);
+    background: url(./src/daniel-j-schwarz-crzshbvMPcA-unsplash.jpg);
     background-size: cover;
   }
 
