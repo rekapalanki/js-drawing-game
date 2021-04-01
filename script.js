@@ -2,6 +2,7 @@
 
 const canvas = document.querySelector('#drawing-game');
 const ctx = canvas.getContext('2d');
+const LINE_WIDTH = 10;
 
 // Setup canvas 
 
@@ -13,21 +14,45 @@ let [x, y] = [
 
 ctx.lineCap = 'round';
 ctx.lineJoin = 'round';
-ctx.lineWidth = 10;
+ctx.lineWidth = LINE_WIDTH;
 
 ctx.fillStyle = '#000';
-ctx.fillRect(0,0,width, height);
+ctx.fillRect(0, 0, width, height);
 
 ctx.beginPath();
-ctx.strokeStyle = '#fff'
+ctx.strokeStyle = '#fff';
 ctx.moveTo(x, y);
 ctx.lineTo(x, y);
 ctx.stroke();
 
 // Create draw function 
 
-const draw = ({key}) => { 
+const draw = ({key}) => {
   console.log(key);
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  switch (key) {
+    case 'ArrowUp':
+      y -= LINE_WIDTH;
+      break;
+
+    case 'ArrowDown':
+      y += LINE_WIDTH;
+      break;
+
+    case 'ArrowLeft':
+      x -= LINE_WIDTH;
+      break;
+  
+    case 'ArrowRight':
+      x += LINE_WIDTH;
+      break;
+
+    default:
+      break;
+  }
+  ctx.lineTo(x, y);
+  ctx.stroke();
 }
 
 // Create Arrow event handler
