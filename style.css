@@ -122,8 +122,14 @@ html {
     align-items: center;
     justify-items: center;
     background: white;
-    background: url(./src/daniel-j-schwarz-crzshbvMPcA-unsplash.jpg);
+    background: url(./src/trent-bamberry-yed2FOgHdzI-unsplash_large.jpg);
     background-size: cover;
+  }
+
+  h1 {
+    padding-top: 4rem;
+    text-align: center;
+    color: var(--yellow);
   }
 
   footer {
@@ -139,7 +145,7 @@ html {
     border-radius: 10px;
     /* Set the width and height to half the actual size so it doesn't look pixelated */
     width: 800px;
-    height: 500px;
+    height: 400px;
     background: white;
   }
 
