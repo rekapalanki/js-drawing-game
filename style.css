@@ -132,6 +132,28 @@ html {
     color: var(--yellow);
   }
 
+  .unicorn-container {
+    /* background-color: var(--yellow); */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    padding: 1rem;
+    /* display: none; */
+  }
+
+  .rainbow-unicorn {
+    width: 150px;
+    border-radius: 50%;
+    transform: translateY(0px);
+    transition: transform 2s;
+  }
+
+  .rainbow-unicorn.big {
+    transform: translateY(+400px);
+  }
+
   footer {
     padding-top: 3rem;
     padding-bottom: 1rem;

@@ -3,7 +3,13 @@
 const canvas = document.querySelector('#drawing-game');
 const ctx = canvas.getContext('2d');
 const shake = document.querySelector('.shake');
+const uniContainer = document.querySelector('.unicorn-container');
 const LINE_WIDTH = 10;
+const unicornHTML = `
+  <img class="rainbow-unicorn" src="./src/Rainbow_unicorn_badge.JPG" alt="rainbow-unicorn-badge">
+`;
+const unicornFragment = document.createRange().createContextualFragment(unicornHTML);
+const unicorn = unicornFragment.querySelector('img');
 
 // Setup canvas 
 
@@ -82,8 +88,20 @@ window.addEventListener('keydown', arrowHandler)
 
 // Create clear function and click event listener
 
+const removeShake = () => {
+  canvas.classList.remove('shake');
+  unicorn.classList.remove('big');
+}
+
 const clickHandler = (event) => {
-  console.log(event);
+  ctx.clearRect(0, 0, width, height);
+  rect();
+  startPoint();
+  canvas.classList.add('shake');
+  canvas.addEventListener('animationend', removeShake, { once: true });
+  uniContainer.appendChild(unicorn);
+  unicorn.classList.add('big');
 }
 
 shake.addEventListener('click', clickHandler);
+
