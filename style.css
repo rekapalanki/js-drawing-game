@@ -121,60 +121,67 @@ html {
     display: grid;
     align-items: center;
     justify-items: center;
-    background: white;
-    background: url(./src/trent-bamberry-yed2FOgHdzI-unsplash_large.jpg);
-    background-size: cover;
+    background: white url('./src/trent-bamberry-yed2FOgHdzI-unsplash_large.jpg') no-repeat;
+  }
+
+  div {
+    padding: 1rem;
   }
 
   h1 {
-    padding-top: 4rem;
     text-align: center;
     color: var(--yellow);
   }
 
   .unicorn-container {
-    /* background-color: var(--yellow); */
     position: fixed;
     left: 0;
     top: 0;
     width: 200px;
     height: 100vh;
-    padding: 1rem;
-    /* display: none; */
   }
 
   .rainbow-unicorn {
-    width: 150px;
+    width: 50px;
     border-radius: 50%;
     transform: translateY(0px);
-    transition: transform 2s;
+    transition: all 2s ease-in;
   }
 
   .rainbow-unicorn.big {
-    transform: translateY(+400px);
-  }
-
-  footer {
-    padding-top: 3rem;
-    padding-bottom: 1rem;
-    text-align: center;
-    color: #fff;
-    font-size: 75%;
+    width: 150px;
+    transform: translate(40vw, 40vh);
   }
 
   canvas {
     border: 10px solid #e80000;
     border-radius: 10px;
     /* Set the width and height to half the actual size so it doesn't look pixelated */
-    width: 800px;
-    height: 400px;
+    max-width: calc(100vw - 5rem);
+    max-height: calc(100vh - 5rem);
     background: white;
   }
 
+  .log {
+    display: none;
+  }
+
+  .controls {
+    display: inline-block;
+    padding-left: 2rem;
+  }
+  
+  footer {
+    padding: 1rem;
+    text-align: center;
+    color: #000;
+    font-size: 75%;
+  }
+  
   canvas.shake {
     animation: shake 0.5s linear 1;
   }
-
+  
   @keyframes shake {
 
     10%,
@@ -196,5 +203,21 @@ html {
     40%,
     60% {
       transform: translate3d(4px, 0, 0);
+    }
+  }
+
+  @media (min-width: 800px) {
+    body {
+      background-size: cover;
+    }
+
+    h1 {
+      padding-top: 1rem;
+    }
+
+    canvas {
+      /* Set the width and height to half the actual size so it doesn't look pixelated */
+      width: 800px;
+      height: 400px;
     }
   }
